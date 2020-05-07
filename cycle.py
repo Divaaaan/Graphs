@@ -16,7 +16,17 @@ def dfs(s):
  
 def int1(a):
     return int(a) - 1
- 
+
+
+def path(s, f):
+    pt = []
+    while f != s:
+        pt.append(f + 1)
+        f = p[f]
+    pt.append(s + 1)
+    return pt[::-1]
+
+
 n, m = map(int, input().split())
 g = [[] for i in range(n)]
 used = [0] * n
@@ -25,14 +35,7 @@ for i in range(m):
     a, b = map(int1, input().split())
     g[a].append(b)
  
-def path(s, f):
-    pt = []
-    while f != s:
-        pt.append(f + 1)
-        f = p[f]
-    pt.append(s + 1)
-    return pt[::-1]
- 
+
 cyc_beg = -1
 cyc_end = -1
 for i in range(n):
