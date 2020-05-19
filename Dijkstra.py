@@ -34,5 +34,5 @@ for _ in range(int(input())):
 d = [INF] * n
 p = [-1] * n
 u = [False] * n
-Dijkstra(a)
+Dijkstra(a - 1)
 print(d[b - 1] if d[b - 1] != INF else -1)
