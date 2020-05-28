@@ -17,6 +17,31 @@ def RSQ(l, r):
     else:
         return partRSQ(r) - partRSQ(l - 1)
 
+def v2RSQ(l, r):
+    sm = 0
+    while(l <= r):
+        if l % ln == 0 and l + ln - 1 <= r:
+            sm += b[l // ln]
+            l += ln
+        else:
+            sm += a[l]
+            l += 1
+    return sm
+
+def v3RSQ(l, r):
+    sm = 0
+    0, ln, 2 * ln
+    while l % ln != 0 and l <= r:
+        sm += a[l]
+        l += 1
+    it = l // ln
+    while it * ln + ln - 1 <= r:
+        sm += b[it]
+        it += 1
+    for i in range(max(l, it * ln), r + 1):
+        sm += a[i]
+    return sm
+    
 def UPD(i, x):
     b[i // ln] += x - a[i]
     a[i] = x
