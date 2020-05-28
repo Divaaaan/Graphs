@@ -11,7 +11,14 @@ def prefix_function (s):
 	return pi
 
 s = input()
-t = input()
-e = s + '#' + t
-p = prefix_function(e)
-print(*p)
+s1 = '>>-->#' + s
+s2 = '<--<<#' + s
+p1 = prefix_function(s1)
+p2 = prefix_function(s2)
+k = 0
+for i in range(len(p1)):
+	if p1[i] == 5:
+		k += 1
+	if p2[i] == 5:
+		k += 1
+print(k)
